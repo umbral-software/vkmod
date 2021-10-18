@@ -1,8 +1,6 @@
 export module vulkan;
 
 // UNDEFINED BEHAVIOUR: A translation unit shall not #define or #undef names lexically identical to keywords
-// Justification: `module` is used as an identifier by vulkan.h, but it is a keyword in module files
-#define module _module
 // Justification: variables with internal linkage (i.e. static) are not allowed as module exports
 #define static constexpr
 
