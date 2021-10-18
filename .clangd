@@ -1,0 +1,6 @@
+CompileFlags:
+  Add: [
+    "-std=c++20", "--stdlib=libc++",
+    "-Weverything", "-Wno-c++98-compat",
+     "-fprebuilt-module-path=/path/to/source","-fimplicit-modules", "-fimplicit-module-maps"
+  ]
