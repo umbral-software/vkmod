@@ -1,5 +1,6 @@
 import vulkan;
-import <stdexcept>;
+
+import <vector>;
 
 constexpr void check_success(VkResult vkResult)
 {
@@ -20,5 +21,16 @@ int main()
     VkInstance instance;
     check_success(vkCreateInstance(&instanceCreateInfo, nullptr, &instance));
 
+    uint32_t numPhysicalDevices;
+    check_success(vkEnumeratePhysicalDevices(instance, &numPhysicalDevices, nullptr));
+    std::vector<VkPhysicalDevice> physicalDevices(numPhysicalDevices);
+    check_success(vkEnumeratePhysicalDevices(instance, &numPhysicalDevices, physicalDevices.data()));
+
+    VkDeviceCreateInfo deviceCreateInfo = { VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO };
+
+    VkDevice device;
+    check_success(vkCreateDevice(physicalDevices[0], &deviceCreateInfo, nullptr, &device));
+
+    vkDestroyDevice(device, nullptr);
     vkDestroyInstance(instance, nullptr);
 }
