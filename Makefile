@@ -16,10 +16,3 @@ ALL_MODULES: vulkan.pcm
 .cppm.pcm:
 	${CXX} ${CXXFLAGS} --precompile $< -o $@
 
-.cppm.o:
-	${CXX} ${CXXFLAGS} -c $< -o $@
-
-.cpp.o:
-	${CXX} ${CXXFLAGS} -c $< -o $@
-
-

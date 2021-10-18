@@ -3,13 +3,17 @@ CXXFLAGS = -std=c++20 -fprebuilt-module-path=.. -fimplicit-modules -fimplicit-mo
 LDFLAGS = 
 LIBRARIES = -lvulkan
 
+EXECUTABLE = vkmod-example
+
 .PHONY: all clean
 
-all: vkmod-example
+all: $(EXECUTABLE)
 
 clean:
-	rm -f vkmod-example *.o
+	rm -f $(EXECUTABLE) *.o
 
-vkmod-example: main.o
-	${CXX} ${LDFLAGS} $^ ${LIBRARIES} -o vkmod-example
+$(EXECUTABLE): main.o
+	${CXX} ${LDFLAGS} $^ ${LIBRARIES} -o $@
 
+.cpp.o:
+	${CXX} ${CXXFLAGS} -c $< -o $@
