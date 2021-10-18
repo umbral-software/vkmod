@@ -1,3 +1,4 @@
+#pragma clang diagnostic ignored "-Wmissing-variable-declarations"
 export module vulkan;
 
 // UNDEFINED BEHAVIOUR: A translation unit shall not #define or #undef names lexically identical to keywords
