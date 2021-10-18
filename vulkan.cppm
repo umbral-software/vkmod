@@ -67,22 +67,22 @@ constexpr VkBool32 VK_FALSE = 0;
 constexpr float VK_LOD_CLAMP_NONE = 1000.0f;
 
 #undef VK_QUEUE_FAMILY_IGNORED
-constexpr uint32_t VK_QUEUE_FAMILY_IGNORED = ~0;
+constexpr uint32_t VK_QUEUE_FAMILY_IGNORED = ~0U;
 
 #undef VK_REMAINING_ARRAY_LAYERS
-constexpr uint32_t VK_REMAINING_ARRAY_LAYERS = ~0;
+constexpr uint32_t VK_REMAINING_ARRAY_LAYERS = ~0U;
 
 #undef VK_REMAINING_MIP_LEVELS
-constexpr uint32_t VK_REMAINING_MIP_LEVELS = ~0;
+constexpr uint32_t VK_REMAINING_MIP_LEVELS = ~0U;
 
 #undef VK_SUBPASS_EXTERNAL
-constexpr uint32_t VK_SUBPASS_EXTERNAL = ~0;
+constexpr uint32_t VK_SUBPASS_EXTERNAL = ~0U;
 
 #undef VK_TRUE
 constexpr VkBool32 VK_TRUE = 1;
 
 #undef VK_WHOLE_SIZE
-constexpr VkDeviceSize VK_WHOLE_SIZE = ~0;
+constexpr VkDeviceSize VK_WHOLE_SIZE = ~0U;
 
 #undef VK_MAX_MEMORY_TYPES
 constexpr uint32_t VK_MAX_MEMORY_TYPES = 32;
